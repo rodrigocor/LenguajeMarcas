@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<criminales_espanioles>
+	<criminal DNI="" estado_penal="">
+		<datos_personales sexo="">
+			<apellidos_nombre></apellidos_nombre>
+			<fecha_nacimiento></fecha_nacimiento>
+			<altura></altura>
+			<descripcion_fisica> </descripcion_fisica>
+			<historial_medico> </historial_medico>
+		</datos_personales>
+		<direccion_completa>
+			<direccion></direccion>
+			<localidad></localidad>
+			<codigo_postal></codigo_postal>
+			<provincia></provincia>
+		</direccion_completa>
+		<lista_delitos_cometidos> 
+			<juzgado> </juzgado>
+			<pena_recibida> </pena_recibida>
+			<cumpliendo> </cumplimiendo>
+		</lista_delitos_cometidos> 
+	</criminal>
+</criminales_espanioles>
+
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name= "criminales">
+   <xs:complexType>
+    <xs:sequence>
+     <xs:element name="criminal">
+   	  <xs:complexType>
+   	   <xs:sequence>
+   	    <xs:element name="datospersonales">
+   	     <xs:complexType>
+   	      <xs:sequence>
+   	       <xs:element name="apellidos_nombre" type="xs:string">
+   	       	 <xs:simpleType>
+   	       	   <xs:restriction base="xs:string">
+   	       	 	 <xs:pattern value="[a-zA-Z ],[a-zA-Z ]"/>
+   	       	 	   <xs:maxlength value="100">
+   	       	   </xs:restriction>
+   	       	 </xs:simpleType>
+   	       </xs:element>
+   	       <xs:element name="fecha_nacimiento" type="xs:date"/>
+   	       <xs:element name="altura" type="xs:decimal"/>
+   	       <xs:element name="descripcion" type="xs:string"/>
+   	       	<xs:simpleType>
+   	       	  <xs:restriction>
+   	       	    <xs:maxlength value="200"/>
+   	       	  </xs:restriction>
+   	       	</xs:simpleType>
+   	       <xs:element name="historialmedico" type="xs:string" />   	      
+   	        <xs:attribute name="sexo" type="string">
+   	          <xs:simpleType>
+   	       	    <xs:restriction>
+   	       		  <xs:pattern value= "H|F">
+   	       		</xs:restriction>
+   	       	  </xs:simpleType>
+   	       	</xs:attribute>
+   	       </xs:sequence>
+   	      </xs:complexType>
+   	     </xs:element>
+   	      <xs:element name="direcion_completa"/>
+   	       <xs:complexType>
+   	       	<xs:sequence>
+   	       	 <xs:element name="direcion" type="xs:string"/>
+   	       	   <xs:simpleType>
+   	       	     <xs:restriction>
+   	       	 	   <xs:maxlength value="120"/>
+   	       	 	 </xs:restriction>
+   	       	   </xs:simpleType>
+   	       	 <xs:element name="localidad" type="xs:string"/>
+   	       	   <xs:simpleType>
+   	       	 	 <xs:restriction>
+   	       	 	    <xs:maxlength value="80"/>
+   	       	     </xs:restriction>
+   	       	   </xs:simpleType>
+   	       	 <xs:element name="codigo_postal" type="xs:integer"/>
+   	       	   <xs:simpleType>
+   	       	     <xs:restriction>
+   	       	 	   <xs:length value="5"/>
+   	       	 	 </xs:restriction>
+   	       	   </xs:simpleType>
+   	       	 <xs:element name="provincia" type="xs:string"/>
+   	       	 	<xs:simpleType>
+   	       	 	  <xs:restriction>
+   	       	 	    <xs:maxlength value="80"/>
+   	       	 	  </xs:restriction>
+   	       	 	</xs:simpleType>
+   	       	 </xs:sequence>
+   	       	</xs:complexType>
+   	       <xs:element name="lista_delitos_cometidos">
+   	       	<xs:complexType>
+   	       	 <xs:sequence>
+   	       	  <xs:element name="juzgado" type="xs:string"/>
+   	       	  <xs:element name="pena_recibida" type="xs:string"/>
+   	       	  <xs:element name="cumplimiento" type="xs:string"/>
+   	       	 </xs:sequence>
+   	        </xs:complexType>
+   	       </xs:element>
+   	     </xs:sequence>
+   	   <xs:attribute name="dni" type="xs:string">
+   	 	 <xs:simpleType>
+   	 	  <xs:restriction>
+   	 	    <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]"/>
+   	 	  </xs:restriction>
+   	 	 </xs:simpleType>
+   	   </xs:attribute>
+   	  </xs:complexType>
+     </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE criminales_espanioles[
+ <!ELEMENT criminales_espanioles (criminal+)>
+ <!ELEMENT criminal (datos_personales, direccion_completa)>
+ <!ATTLIST criminal DNI CDATA #REQUIRED>
+ <!ATTLIST criminal estado_penal CDATA #REQUIRED>
+ <!ELEMENT datos_personales (apellidos_nombre, fecha_nacimiento, altura, descripcion_fisica, historial_medico)>
+ <!ATTLIST datos_personales sexo CDATA #REQUIRED>
+ <!ELEMENT apellidos_nombre (#PCDATA)>
+ <!ELEMENT fecha_nacimiento (#PCDATA)>
+ <!ELEMENT altura (#PCDATA)>
+ <!ELEMENT descripcion_fisica (#PCDATA)>
+ <!ELEMENT historial_medico (#PCDATA)>
+ <!ELEMENT direccion_completa (direccion, localidad, codigo_postal, provincia)>
+ <!ELEMENT direccion (#PCDATA)>
+ <!ELEMENT localidad (#PCDATA)>
+ <!ELEMENT codigo_postal (#PCDATA)>
+ <!ELEMENT provincia (#PCDATA)>
+ <!ELEMENT lista_delitos_cometidos (juzgado, pena_recibida, cumpliendo)>
+ <!ELEMENT juzgado (#PCDATA)>
+ <!ELEMENT pena_recibida (#PCDATA)>
+ <!ELEMENT cumplimiento (#PCDATA)>
+]>
+
+
+
+
+Ejercicio 2
+
+ 
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <fabrica>
+ 	<coche>
+ 		<piezas nbastidor="">
+ 			<pieza num_ref="">
+ 				<nombre></nombre>
+ 				<parte_pertenece></parte_pertenece>
+ 				<peso></peso>
+ 				<stock></stock>
+ 				<obrero  DNI="">
+ 					<nombre></nombre>
+ 					<apellidos_obrero></apellidos_obrero>
+ 					<direcion></direcion>
+ 					<localidad></localidad>
+ 					<codigo_postal></codigo_postal>
+ 					<provincia></provincia>
+ 					<fecha_incorporacion></fecha_incorporacion>
+ 				</obrero>
+ 			</pieza>
+ 		</piezas>
+ 		<pintor>			
+ 			<nombre_pintor></nombre_pintor>
+ 			<apellidos_pintor></apellidos_pintor>
+ 			<direcion></direcion>
+ 			<localidad></localidad>
+ 			<codigo_postal></codigo_postal>
+ 			<provincia></provincia>
+ 			<fecha_incorporacion></fecha_incorporacion>
+ 			<fecha_examen></fecha_examen>
+ 		</pintor>
+ 	</coche>
+ </fabrica>
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding= "UTF-8"?>
+<!DOCTYPE fabrica [
+ <!ELEMENT fabrica (coche)>
+ <!ELEMENT coche (piezas)>
+ <!ATTLIST coche nubastidor CDATA #REQUIRED>
+ <!ELEMENT piezas (pieza,pintor*)>
+ <!ELEMENT pieza ((parte_pertenece,peso,stock)obrero*)>
+ <!ATTLIST pieza num_ref CDATA #REQUIRED>
+ <!ELEMENT parte_pertenece (#PCDATA)>
+ <!ELEMENT peso (#PCDATA)>
+ <!ELEMENT stock (#PCDATA)>
+ <!ELEMENT obrero (nombre,apellidos,direcion,provincia,fecha_incorporacion)>
+ <!ATTLIST obrero DNI CDATA #REQUIRED> 
+ <!ELEMENT nombre (#PCDATA)>
+ <!ELEMENT apellidos (#PCDATA)>
+ <!ELEMENT direcion (#PCDATA)>
+ <!ELEMENT provincia (#PCDATA)>
+ <!ELEMENT fecha_incorporacion (#PCDATA)>
+ <!ELEMENT pintor (nombre,apellidos,direcion,provincia,fecha_incorporacion,fecha_examen)>
+ <!ATTLIST pintor dni CDATA #REQUIRED>
+ <!ATTLIST pintor fecha_incorporacion> 
+ <!ELEMENT nombre (#PCDATA)>
+ <!ELEMENT apellidos (#PCDATA)>
+ <!ELEMENT direcion (#PCDATA)>
+ <!ELEMENT codigo_postal (#PCDATA)>
+ <!ELEMENT provincia (#PCDATA)>
+ <!ELEMENT localidad (#PCDATA)>
+ <!ELEMENT fecha_examen (#PCDATA)>
+]>
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name= "fabrica">
+   <xs:complexType>
+    <xs:sequence>
+     <xs:element name="coche" type="xs:string">
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="piezas" type="xs:string">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element name="pieza" type="xs:string">
+            <xs:complexType>
+             <xs:sequence>
+              <xs:element name="nombre_parte" type="xs:string"/>
+              <xs:element name="peso" type="xs:positiveDecimal"/>
+              <xs:element name="stock" type="xs:positiveInteger"/>
+             </xs:sequence>
+            </xs:complexType>
+           </xs:element>
+          </xs:sequence>
+         </xs:complexType>
+      <xs:attribute name="num_ref" type="xs:integer">
+      	<xs:simpleType>
+      	  <xs:restriction>
+      	  	<xs:pattern value"([A-z][0-9][0-9][0-9][0-9])">
+      	  </xs:restriction>
+      	</xs:simpleType>
+      </xs:attribute>
+  </xs:element>
+    <xs:element name="obrero" type="xs:string">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="nombre" type="xs:string">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxlength value="35"/>
+            </xs:restriction> 
+          </xs:simpleType>
+        </xs:element>
+       <xs:element name="apellidos" type="xs:string">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxlength value="70"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+       <xs:element name="direcion" type="xs:string">
+        <xs:simpleType>
+          <xs:element name="provincia" type="xs:string">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:maxlength value="100"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="localidad" type="xs:string">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:maxlength value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+          <xs:element name="codigo_postal" type="xs:integer">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:maxlength value="5"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="dni" type="xs:string">
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:element name="fecha_incorporacion" type="xs:date"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="pintor" type="string">
+ <xs:complexType>
+  <xs:sequence>
+   <xs:element name="nombre_pintor" type="xs:string">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:maxlength value="35"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+   <xs:element name="apellidos_pintor" type="xs:string">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:maxlength value="70"/>
+      </xs:restriction>
+    </xs:simpleType>
+   </xs:element>
+   <xs:element name="direcion">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="provincia" type="xs:string">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:maxlength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="localidad" type="xs:string">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:maxlength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:element name="codigo_postal" type="xs:integer">
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:maxlength value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:element>
+<xs:element name="fecha_examen" type="xs:date"/>
+</xs:sequence>
+<xs:attribute name="dni" type="xs:string">
+  <xs:simpleType>
+    <xs:restriction>
+      <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
+<xs:element name="fecha_incorporacion" type="xs:date"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="nbastidor" type="xs:string">
+  <xs:simpleType>
+    <xs:restriction>
+      <xs:pattern value="[A-Z0-9]{17}"/>
+    </xs:restriction> 
+  </xs:simpleType> 
+</xs:attribute>    
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+
+
+
+
+Ejercicio 3
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<w:document xmlns:w="http://schemas.microsoft.com/office/word/2010/wordprocessing">
+<w:body>
+<w:p w:rsidR="008A2C98" w:rsidRDefault="00ED69ED">
+<w:r>
+	<w:t xml:space="preserve">Esto es un </w:t>
+</w:r>
+<w:rw: rsidRPr="00ED69ED">
+<w:rPr>
+	<w:i/>
+</w:rPr>
+<w:t xml:space="preserve">ejercicio</w:t>
+</w:r>
+	<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+	<w:bookmarkEnd w:id="0"/>
+<w:r w:rsidRPr="00ED69ED">
+<w:rPr>
+	<w:i/>
+</w:rPr>
+	<w:t>de prueba</w:t>
+</w:r>
+<w:r>
+<w:t xml:space="preserve"> que </w:t>
+</w:r>
+<w:rw:rsidRPr="00ED69ED">
+<w:rPr>
+	<w:u w:val="single"/>
+</w:rPr>
+<w:t>hago para estas</w:t>
+</w:r>
+<w:r>
+<w:t xml:space="preserve"> prácticas.</w:t>
+</w:r>
+<w:r w:rsidRPr="00ED69ED">
+<w:rPr>
+<w:b/>
+</w:rPr>
+<w:t xml:space="preserve"> Felices fiestas.</w:t>
+</w:r>
+</w:p>
+<w:sectPr w:rsidR="008A2C98">
+<w:pgSz w:w="11906" w:h="16838"/>
+<w:pgMar w:top="1417" w:right="1701" w:bottom="1417" w:left="1701" w:header="708" w:footer="708" w:gutter="0"/>
+<w:cols w:space="708"/>
+<w:docGrid
+w:linePitch="360"/>
+</w:sectPr>
+</w:body>
+</w:document>
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="document">
+  <xs:complexType>
+   <xs:sequence>	
+    <xs:element name="body">
+     <xs:complexType>
+      <xs:sequence> 	
+       <xs:element name="w:p" type="xs:string">
+       	<xs:complexType>
+       	 <xs:sequence>
+       	  <xs:element name="w:r">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	     <xs:element name="w:t" type="xs:string"/>
+       	    </xs:sequence>
+       	    <xs:attribute name="xml:space" type="xs:string">
+       	    </xs:attribute>
+       	   </xs:complexType>
+       	  </xs:element>
+       	  <xs:element name="w:rw" type="xs:string">
+       	   <xs:complexType>
+       	    <xs:sequence>
+       	     <xs:element name="w:rPr">
+       	      <xs:complexType>
+       	       <xs:sequence>
+       	        <xs:element name="w:i"/>
+       	       </xs:sequence>
+       	      </xs:complexType>
+       	     </xs:element>
+       	     <xs:element name="w:t" type="xs:string"/>
+       	     <xs:attribute name="xml:space" type="xs:string">
+       	    </xs:attribute>
+       	    </xs:sequence>
+       	   </xs:complexType>
+       	  </xs:element>
+       	   <xs:attribute name="rsidRPr" type="xs:string">
+       	   </xs:attribute>
+       	  <xs:complexType>
+       	   <xs:sequence>
+       	    <xs:element name="w:bookmarkStart" type="xs:string"/>
+       	   </xs:sequence>
+       	   <xs:attribute name="w:id" type="xs:integer"/>
+       	   <xs:attribute name="w:name" type="xs:string"/>
+       	  </xs:complexType>
+       	  <xs:complexType>
+       	   <xs:sequence>
+       	    <xs:element name="w:bookmarkEnd" type="xs:integer"/>
+       	   </xs:sequence>
+       	   <xs:attribute name="w:id" type="xs:integer"/>
+       	  </xs:complexType>
+       	  <xs:element name="w:rw" type="xs:string">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	   	 <xs:element name="w:rPr">
+       	   	  <xs:complexType>
+       	   	   <xs:sequence>
+       	   	   	<xs:element name="w:i"/>
+       	   	   </xs:sequence>
+       	   	  </xs:complexType>
+       	   	 </xs:element>
+       	   	 <xs:element name="w:t" type="xs:string"/>
+       	   	</xs:sequence>
+       	   	<xs:attribute name="rsidRPr" type="xs:string">
+       	   	</xs:attribute>
+       	   </xs:complexType>
+       	  </xs:element>
+       	  <xs:element name="w:r">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	   	 <xs:element name="xml:space" type="xs:string"/>
+       	   	</xs:sequence>
+       	   </xs:complexType>
+          </xs:element>
+          <xs:element name="w:rw" type="xs:string">
+           <xs:complexType>
+            <xs:sequence>
+             <xs:element name="w:rPr">
+              <xs:complexType>
+               <xs:sequence>
+               	<xs:element name="w:u" type="string"/>
+               </xs:sequence>
+               <xs:attribute name="w:val" type="xs:string"/>
+              </xs:complexType>
+             </xs:element>
+             <xs:element name="w:t" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="rsidRPr" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          <xs:element name="w:r">
+           <xs:complexType>
+           	<xs:sequence>
+           	 <xs:element name="w:t" type="xs:string"/>
+           	</xs:sequence>
+           	<xs:attribute name="xml:space" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          <xs:element name="w:r" type="xs:string">
+           <xs:complexType>
+           	<xs:sequence>
+           	 <xs:element name="w:rPr">
+           	  <xs:complexType>
+           	   <xs:sequence>
+           	   	<xs:element name="w:b"/>
+           	   </xs:sequence>
+           	  </xs:complexType>
+           	  <xs:element name="w:t" type="xs:string"/>
+           	  <xs:attribute name="xml.space" type="xs:string"/>
+           	 </xs:element>
+           	</xs:sequence>
+           	<xs:attribute name="w:rsidRPr" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          </xs:sequence>
+          <xs:attribute name="w:rsidR" type="xs:string"/>
+          <xs:attribute name="w:rsidRDefault" type="xs:string"/>
+        </xs:element>
+        <xs:element name="sectPr" type="xs:string">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element name="w:pgSz" type="xs:integer"/>
+            <xs:attribute name="w:w" type="xs:integer"/>
+            <xs:attribute name="w:h" type="xs:integer"/>
+           <xs:element name="w:pgMar" type="xs:integer"/>
+            <xs:attribute name="w:top" type="xs:integer"/>
+            <xs:attribute name="w:right" type="xs:integer"/>
+            <xs:attribute name="w:bottom" type="xs:integer"/>
+            <xs:attribute name="w:left" type="xs:integer"/>
+            <xs:attribute name="w:header" type="xs:integer"/>
+            <xs:attribute name="w:footer" type="xs:integer"/>
+            <xs:attribute name="w:gutter" type="xs:integer"/>
+           <xs:element name="w:cols" type="xs:integer"/>
+            <xs:attribute name="w:space" type="xs:integer"/>
+           <xs:element name="w:docGrid" type="integer"/>
+            <xs:attribute name="w:linePitch" type="xs:integer"/>
+           </xs:sequence>
+          <xs:attribute name="w:rsidR" type="xs:integer"/>
+        </xs:complexType>
+       </xs:element>
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>
+</xs:schema>
