@@ -1,0 +1,147 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="document">
+  <xs:complexType>
+   <xs:sequence>	
+    <xs:element name="body">
+     <xs:complexType>
+      <xs:sequence> 	
+       <xs:element name="w:p" type="xs:string">
+       	<xs:complexType>
+       	 <xs:sequence>
+       	  <xs:element name="w:r">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	     <xs:element name="w:t" type="xs:string"/>
+       	    </xs:sequence>
+       	    <xs:attribute name="xml:space" type="xs:string">
+       	    </xs:attribute>
+       	   </xs:complexType>
+       	  </xs:element>
+       	  <xs:element name="w:rw" type="xs:string">
+       	   <xs:complexType>
+       	    <xs:sequence>
+       	     <xs:element name="w:rPr">
+       	      <xs:complexType>
+       	       <xs:sequence>
+       	        <xs:element name="w:i"/>
+       	       </xs:sequence>
+       	      </xs:complexType>
+       	     </xs:element>
+       	     <xs:element name="w:t" type="xs:string"/>
+       	     <xs:attribute name="xml:space" type="xs:string">
+       	    </xs:attribute>
+       	    </xs:sequence>
+       	   </xs:complexType>
+       	  </xs:element>
+       	   <xs:attribute name="rsidRPr" type="xs:string">
+       	   </xs:attribute>
+       	  <xs:complexType>
+       	   <xs:sequence>
+       	    <xs:element name="w:bookmarkStart" type="xs:string"/>
+       	   </xs:sequence>
+       	   <xs:attribute name="w:id" type="xs:integer"/>
+       	   <xs:attribute name="w:name" type="xs:string"/>
+       	  </xs:complexType>
+       	  <xs:complexType>
+       	   <xs:sequence>
+       	    <xs:element name="w:bookmarkEnd" type="xs:integer"/>
+       	   </xs:sequence>
+       	   <xs:attribute name="w:id" type="xs:integer"/>
+       	  </xs:complexType>
+       	  <xs:element name="w:rw" type="xs:string">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	   	 <xs:element name="w:rPr">
+       	   	  <xs:complexType>
+       	   	   <xs:sequence>
+       	   	   	<xs:element name="w:i"/>
+       	   	   </xs:sequence>
+       	   	  </xs:complexType>
+       	   	 </xs:element>
+       	   	 <xs:element name="w:t" type="xs:string"/>
+       	   	</xs:sequence>
+       	   	<xs:attribute name="rsidRPr" type="xs:string">
+       	   	</xs:attribute>
+       	   </xs:complexType>
+       	  </xs:element>
+       	  <xs:element name="w:r">
+       	   <xs:complexType>
+       	   	<xs:sequence>
+       	   	 <xs:element name="xml:space" type="xs:string"/>
+       	   	</xs:sequence>
+       	   </xs:complexType>
+          </xs:element>
+          <xs:element name="w:rw" type="xs:string">
+           <xs:complexType>
+            <xs:sequence>
+             <xs:element name="w:rPr">
+              <xs:complexType>
+               <xs:sequence>
+               	<xs:element name="w:u" type="string"/>
+               </xs:sequence>
+               <xs:attribute name="w:val" type="xs:string"/>
+              </xs:complexType>
+             </xs:element>
+             <xs:element name="w:t" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="rsidRPr" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          <xs:element name="w:r">
+           <xs:complexType>
+           	<xs:sequence>
+           	 <xs:element name="w:t" type="xs:string"/>
+           	</xs:sequence>
+           	<xs:attribute name="xml:space" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          <xs:element name="w:r" type="xs:string">
+           <xs:complexType>
+           	<xs:sequence>
+           	 <xs:element name="w:rPr">
+           	  <xs:complexType>
+           	   <xs:sequence>
+           	   	<xs:element name="w:b"/>
+           	   </xs:sequence>
+           	  </xs:complexType>
+           	  <xs:element name="w:t" type="xs:string"/>
+           	  <xs:attribute name="xml.space" type="xs:string"/>
+           	 </xs:element>
+           	</xs:sequence>
+           	<xs:attribute name="w:rsidRPr" type="xs:string"/>
+           </xs:complexType>
+          </xs:element>
+          </xs:sequence>
+          <xs:attribute name="w:rsidR" type="xs:string"/>
+          <xs:attribute name="w:rsidRDefault" type="xs:string"/>
+        </xs:element>
+        <xs:element name="sectPr" type="xs:string">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element name="w:pgSz" type="xs:integer"/>
+            <xs:attribute name="w:w" type="xs:integer"/>
+            <xs:attribute name="w:h" type="xs:integer"/>
+           <xs:element name="w:pgMar" type="xs:integer"/>
+            <xs:attribute name="w:top" type="xs:integer"/>
+            <xs:attribute name="w:right" type="xs:integer"/>
+            <xs:attribute name="w:bottom" type="xs:integer"/>
+            <xs:attribute name="w:left" type="xs:integer"/>
+            <xs:attribute name="w:header" type="xs:integer"/>
+            <xs:attribute name="w:footer" type="xs:integer"/>
+            <xs:attribute name="w:gutter" type="xs:integer"/>
+           <xs:element name="w:cols" type="xs:integer"/>
+            <xs:attribute name="w:space" type="xs:integer"/>
+           <xs:element name="w:docGrid" type="integer"/>
+            <xs:attribute name="w:linePitch" type="xs:integer"/>
+           </xs:sequence>
+          <xs:attribute name="w:rsidR" type="xs:integer"/>
+        </xs:complexType>
+       </xs:element>
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>
+</xs:schema>

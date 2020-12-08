@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE criminales_espanioles[
+ <!ELEMENT criminales_espanioles (criminal+)>
+ <!ELEMENT criminal (datos_personales, direccion_completa)>
+ <!ATTLIST criminal DNI CDATA #REQUIRED>
+ <!ATTLIST criminal estado_penal CDATA #REQUIRED>
+ <!ELEMENT datos_personales (apellidos_nombre, fecha_nacimiento, altura, descripcion_fisica, historial_medico)>
+ <!ATTLIST datos_personales sexo CDATA #REQUIRED>
+ <!ELEMENT apellidos_nombre (#PCDATA)>
+ <!ELEMENT fecha_nacimiento (#PCDATA)>
+ <!ELEMENT altura (#PCDATA)>
+ <!ELEMENT descripcion_fisica (#PCDATA)>
+ <!ELEMENT historial_medico (#PCDATA)>
+ <!ELEMENT direccion_completa (direccion, localidad, codigo_postal, provincia)>
+ <!ELEMENT direccion (#PCDATA)>
+ <!ELEMENT localidad (#PCDATA)>
+ <!ELEMENT codigo_postal (#PCDATA)>
+ <!ELEMENT provincia (#PCDATA)>
+ <!ELEMENT lista_delitos_cometidos (juzgado, pena_recibida, cumpliendo)>
+ <!ELEMENT juzgado (#PCDATA)>
+ <!ELEMENT pena_recibida (#PCDATA)>
+ <!ELEMENT cumplimiento (#PCDATA)>
+]>

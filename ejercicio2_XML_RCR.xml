@@ -1,0 +1,31 @@
+ <fabrica>
+ 	<coche>
+ 		<piezas nbastidor="">
+ 			<pieza num_ref="">
+ 				<nombre></nombre>
+ 				<parte_pertenece></parte_pertenece>
+ 				<peso></peso>
+ 				<stock></stock>
+ 				<obrero  DNI="">
+ 					<nombre></nombre>
+ 					<apellidos_obrero></apellidos_obrero>
+ 					<direcion></direcion>
+ 					<localidad></localidad>
+ 					<codigo_postal></codigo_postal>
+ 					<provincia></provincia>
+ 					<fecha_incorporacion></fecha_incorporacion>
+ 				</obrero>
+ 			</pieza>
+ 		</piezas>
+ 		<pintor>			
+ 			<nombre_pintor></nombre_pintor>
+ 			<apellidos_pintor></apellidos_pintor>
+ 			<direcion></direcion>
+ 			<localidad></localidad>
+ 			<codigo_postal></codigo_postal>
+ 			<provincia></provincia>
+ 			<fecha_incorporacion></fecha_incorporacion>
+ 			<fecha_examen></fecha_examen>
+ 		</pintor>
+ 	</coche>
+ </fabrica>

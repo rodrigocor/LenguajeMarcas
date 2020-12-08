@@ -1,0 +1,25 @@
+  
+<?xml version="1.0" encoding="UTF-8"?>
+
+<criminales_espanioles>
+	<criminal DNI="" estado_penal="">
+		<datos_personales sexo="">
+			<apellidos_nombre></apellidos_nombre>
+			<fecha_nacimiento></fecha_nacimiento>
+			<altura></altura>
+			<descripcion_fisica> </descripcion_fisica>
+			<historial_medico> </historial_medico>
+		</datos_personales>
+		<direccion_completa>
+			<direccion></direccion>
+			<localidad></localidad>
+			<codigo_postal></codigo_postal>
+			<provincia></provincia>
+		</direccion_completa>
+		<lista_delitos_cometidos> 
+			<juzgado> </juzgado>
+			<pena_recibida> </pena_recibida>
+			<cumpliendo> </cumplimiendo>
+		</lista_delitos_cometidos> 
+	</criminal>
+</criminales_espanioles>
